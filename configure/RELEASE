@@ -1,0 +1,3 @@
+#QT = /dls_sw/work/tools/RHEL6-x86_64/qt
+QT = /dls_sw/work/tools/RHEL6-x86_64/qt_static
+#QT = /scratch/tools/qt

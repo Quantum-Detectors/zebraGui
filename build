@@ -1,0 +1,14 @@
+PROGRAM=zebraTool
+VERSION=0.0
+TAR_FILE=none
+
+build()
+{
+    path_depends QT
+    export TARGET_PREFIX
+    qmake $BUILD_SCRIPT_DIR/zebraTool
+    make
+    make install
+}
+
+# vim: set filetype=sh:
