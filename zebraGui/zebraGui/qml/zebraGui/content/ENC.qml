@@ -39,7 +39,35 @@ GridLayout {
                         onValueChanged: parent.text = value
                     }
                 }      
+
+                Label {
+                    text: "Encoder Resolution"
+                }    
                 
+                TextField {
+                    onAccepted: setMres.value = text
+                    Layout.fillWidth: true
+                    CANumber {
+                        id: setMres
+                        channelID: pvPrefix + "M" + (index+1) + ":MRES"
+                        onValueChanged: parent.text = value
+                    }
+                } 
+                
+                Label {
+                    text: "Encoder Offset"
+                }    
+                
+                TextField {
+                    onAccepted: setOff.value = text
+                    Layout.fillWidth: true
+                    CANumber {
+                        id: setOff
+                        channelID: pvPrefix + "M" + (index+1) + ":OFF"
+                        onValueChanged: parent.text = value
+                    }
+                } 
+                                
                 // Bottom 2 lines
                 Rectangle {
                     color: "black"
@@ -65,9 +93,12 @@ GridLayout {
     Text {
         Layout.columnSpan: 2
         Layout.alignment: Qt.AlignHCenter
-        text:   "If you zero the motor on the motor controller by homing,
-then you must write down the new position of the motor to Zebra
-by pressing the copy button above" 
+        text:   "If you have specified a motor record for each encoder then its current position
+will be displayed in the first box. The second box lets you reference the
+encoder channel by telling zebra what position it is currently at. The Copy
+button lets you do copy the current position to zebra with one click. The 
+resolution and offset boxes let you set the display positions of the encoders
+and PC settings, where Enc_Cts * Resolution + Offset = Enc_EGUs" 
     }    
     
     GroupBox {

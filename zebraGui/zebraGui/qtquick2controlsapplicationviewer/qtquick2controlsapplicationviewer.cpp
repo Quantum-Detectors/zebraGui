@@ -14,6 +14,7 @@
 #include <QQmlEngine>
 #include <QQuickView>
 #include <QQmlContext>
+#include <QIcon>
 
 class QtQuick2ApplicationViewerPrivate
 {
@@ -94,6 +95,7 @@ void QtQuick2ControlsApplicationViewer::setMainQmlFile(const QString &file)
     d->window = qobject_cast<QQuickWindow *>(component.create(d->context));
     if (!d->window)
         qFatal("Error: Your root item has to be a Window.");
+    d->window->setIcon(QIcon(QtQuick2ApplicationViewerPrivate::adjustPath("qml/zebraGui/ZebraLogo80.png")));        
 
     d->engine.setIncubationController(d->window->incubationController());
 }

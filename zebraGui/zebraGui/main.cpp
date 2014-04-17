@@ -23,7 +23,7 @@ Q_IMPORT_PLUGIN(ChannelAccessPlugin)
 Q_IMPORT_PLUGIN(FilePlugin)    
 Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin) 
     viewer.setContextProperty("pvPrefix",  "TESTZEBRA:ZEBRATEST:");
-    viewer.setMainQmlFile(QStringLiteral("qml/zebraTool/main.qml"));
+    viewer.setMainQmlFile(QStringLiteral("qml/zebraGui/main.qml"));
     viewer.show();
 
     return app.exec();
