@@ -76,7 +76,7 @@ GroupBox {
             text: "Trig While Active"
         }
         CAIndicator {
-            channelID: pvPrefix + "SYS_STATERR.B" + (polarityIndex - 12)
+            channelID: pvPrefix + ":SYS_STATERR.B" + (polarityIndex - 12)
             Layout.alignment: Grid.AlignRight
                     onCol: "#FF0000"
                     offCol: "#660000"              

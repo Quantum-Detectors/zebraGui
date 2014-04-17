@@ -22,7 +22,7 @@ GridLayout {
                 }                          
 
                 CALabel {
-                    channelID: pvPrefix + "M" + (index+1) + ":RBV"
+                    channelID: pvPrefix + ":M" + (index+1) + ":RBV"
                     Layout.fillWidth: true                    
                 }
 
@@ -35,7 +35,7 @@ GridLayout {
                     Layout.fillWidth: true
                     CANumber {
                         id: setPos
-                        channelID: pvPrefix + "POS" + (index+1) + "_SET"
+                        channelID: pvPrefix + ":POS" + (index+1) + "_SET"
                         onValueChanged: parent.text = value
                     }
                 }      
@@ -49,7 +49,7 @@ GridLayout {
                     Layout.fillWidth: true
                     CANumber {
                         id: setMres
-                        channelID: pvPrefix + "M" + (index+1) + ":MRES"
+                        channelID: pvPrefix + ":M" + (index+1) + ":MRES"
                         onValueChanged: parent.text = value
                     }
                 } 
@@ -63,7 +63,7 @@ GridLayout {
                     Layout.fillWidth: true
                     CANumber {
                         id: setOff
-                        channelID: pvPrefix + "M" + (index+1) + ":OFF"
+                        channelID: pvPrefix + ":M" + (index+1) + ":OFF"
                         onValueChanged: parent.text = value
                     }
                 } 
@@ -83,7 +83,7 @@ GridLayout {
 
                     CANumber {
                         id: clicker
-                        channelID: pvPrefix + "M" + (index+1) + ":SETPOS.PROC"
+                        channelID: pvPrefix + ":M" + (index+1) + ":SETPOS.PROC"
                     }
                 }   
             }
@@ -112,14 +112,14 @@ and PC settings, where Enc_Cts * Resolution + Offset = Enc_EGUs"
                 text: "STEP"
             }
             InputSelector {
-                channelID: pvPrefix + "QUAD_STEP"
+                channelID: pvPrefix + ":QUAD_STEP"
             }
 
             Label {
                 text: "DIR"
             }
             InputSelector {
-                channelID: pvPrefix + "QUAD_DIR"
+                channelID: pvPrefix + ":QUAD_DIR"
             }
 
             Rectangle {
@@ -133,7 +133,7 @@ and PC settings, where Enc_Cts * Resolution + Offset = Enc_EGUs"
                 text: "OUTA"
             }
             CAIndicator {
-                channelID: pvPrefix + "QUAD_OUTA"
+                channelID: pvPrefix + ":QUAD_OUTA"
                 Layout.alignment: Grid.AlignRight
             }
 
@@ -141,7 +141,7 @@ and PC settings, where Enc_Cts * Resolution + Offset = Enc_EGUs"
                 text: "OUTB"
             }
             CAIndicator {
-                channelID: pvPrefix + "QUAD_OUTB"
+                channelID: pvPrefix + ":QUAD_OUTB"
                 Layout.alignment: Grid.AlignRight
             }
         }

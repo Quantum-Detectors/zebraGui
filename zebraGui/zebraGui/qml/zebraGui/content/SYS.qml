@@ -23,7 +23,7 @@ RowLayout {
                 Label { text: "Version" }
                 CALabel {
                     Layout.fillWidth: true
-                    channelID: pvPrefix + "SYS_VER"
+                    channelID: pvPrefix + ":SYS_VER"
                 }            
                 Button {
                     text: "Open\nin a\nnew\nscreen"
@@ -56,7 +56,7 @@ RowLayout {
                                 anchors.verticalCenter: parent.verticalCenter
                             }
                             InputSelector {
-                                channelID: pvPrefix + repeat.outputs[index]
+                                channelID: pvPrefix + ":" + repeat.outputs[index]
                             }
                         }
                     }
@@ -83,7 +83,7 @@ RowLayout {
 
                         CAText {
                             id: caFilePath
-                            channelID: pvPrefix + "CONFIG_FILE"
+                            channelID: pvPrefix + ":CONFIG_FILE"
                         }
                     }
                     Button {
@@ -101,7 +101,7 @@ RowLayout {
 
                         CANumber {
                             id: write
-                            channelID: pvPrefix + "CONFIG_WRITE.PROC"
+                            channelID: pvPrefix + ":CONFIG_WRITE.PROC"
                         }
                     }
 
@@ -112,14 +112,14 @@ RowLayout {
 
                         CANumber {
                             id: read
-                            channelID: pvPrefix + "CONFIG_READ.PROC"
+                            channelID: pvPrefix + ":CONFIG_READ.PROC"
                         }
                     }
                 }
 
                 CALabel {
                     Layout.fillWidth: true
-                    channelID: pvPrefix + "CONFIG_STATUS"
+                    channelID: pvPrefix + ":CONFIG_STATUS"
                 }
 
                 RowLayout {
@@ -132,7 +132,7 @@ RowLayout {
 
                         CANumber {
                             id: store
-                            channelID: pvPrefix + "STORE.PROC"
+                            channelID: pvPrefix + ":STORE.PROC"
                         }
                     }
 
@@ -143,7 +143,7 @@ RowLayout {
 
                         CANumber {
                             id: restore
-                            channelID: pvPrefix + "RESTORE.PROC"
+                            channelID: pvPrefix + ":RESTORE.PROC"
                         }
                     }
                 }
@@ -173,7 +173,7 @@ RowLayout {
                         anchors.verticalCenter: parent.verticalCenter
                     }
                     InputSelector {
-                        channelID: pvPrefix + rearRepeat.outputs[index]
+                        channelID: pvPrefix + ":" + rearRepeat.outputs[index]
                     }
                 }
             }

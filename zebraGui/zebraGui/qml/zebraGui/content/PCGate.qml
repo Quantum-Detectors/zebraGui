@@ -22,39 +22,39 @@ GroupBox {
 
             EnumMenu {
                 id: stateSelector
-                channelID: pvPrefix + "PC_GATE_SEL"
+                channelID: pvPrefix + ":PC_GATE_SEL"
             }
         }
 
         TextEntry {
             id:startBox
-            channelID: pvPrefix + "PC_GATE_START"
+            channelID: pvPrefix + ":PC_GATE_START"
             label: "Gate Start"
             units: gateBox.units
         }
 
         TextEntry {
             id:widthBox
-            channelID: pvPrefix + "PC_GATE_WID"
+            channelID: pvPrefix + ":PC_GATE_WID"
             label: "Gate Width"
             units: gateBox.units
         }
 
         TextEntry {
             id:stepBox
-            channelID: pvPrefix + "PC_GATE_STEP"
+            channelID: pvPrefix + ":PC_GATE_STEP"
             label: "Gate Step"
             units: gateBox.units
         }
 
         TextEntry {
-            channelID: pvPrefix + "PC_GATE_NGATE"
+            channelID: pvPrefix + ":PC_GATE_NGATE"
             label: "Num Gates"
         }
 
         InputSelector {
             id: externalBox
-            channelID: pvPrefix + "PC_GATE_INP"
+            channelID: pvPrefix + ":PC_GATE_INP"
             visible: false
             indicatorVisible: false
             anchors.bottom: parent.bottom
@@ -71,7 +71,7 @@ GroupBox {
             Indicator {
                 CANumber {
                     id: caGateOut
-                    channelID: pvPrefix + "PC_GATE_OUT"
+                    channelID: pvPrefix + ":PC_GATE_OUT"
                     onValueChanged: if (value == 1) {
                                         parent.col = "#00FF00"
                                     } else {

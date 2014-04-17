@@ -32,7 +32,7 @@ ColumnLayout {
 
                 CANumber {
                     id: caCapture
-                    channelID: pvPrefix + "PC_BIT_CAP"
+                    channelID: pvPrefix + ":PC_BIT_CAP"
                     onValueChanged: {
                         enc1.checked = intValue & 1
                         enc2.checked = intValue & 2
@@ -116,7 +116,7 @@ ColumnLayout {
                 }
 
                 EnumMenu {
-                    channelID: pvPrefix + "PC_ENC"
+                    channelID: pvPrefix + ":PC_ENC"
                 }
 
                 Label {
@@ -126,7 +126,7 @@ ColumnLayout {
                 }
 
                 EnumMenu {
-                    channelID: pvPrefix + "PC_DIR"
+                    channelID: pvPrefix + ":PC_DIR"
                 }
 
                 Label {
@@ -137,7 +137,7 @@ ColumnLayout {
 
                 EnumMenu {
                     id: timeUnits
-                    channelID: pvPrefix + "PC_TSPRE"
+                    channelID: pvPrefix + ":PC_TSPRE"
                 }
             }
         }
@@ -154,7 +154,7 @@ ColumnLayout {
 
     Plot {
         id: plot
-        baseName: pvPrefix
+        baseName: pvPrefix + ":"
         
     }
 

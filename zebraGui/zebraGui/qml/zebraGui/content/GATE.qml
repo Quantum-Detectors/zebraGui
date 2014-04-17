@@ -7,32 +7,32 @@ GridLayout {
     columns: 2
 
     GATEBox {
-        baseChannel: pvPrefix + "GATE1_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":GATE1_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 0
         Layout.alignment: Qt.AlignCenter
         title: "GATE1"
     }
 
     GATEBox {
-        baseChannel: pvPrefix + "GATE2_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":GATE2_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 1
         Layout.alignment: Qt.AlignCenter
         title: "GATE2"
     }
 
     GATEBox {
-        baseChannel: pvPrefix + "GATE3_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":GATE3_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 2
         Layout.alignment: Qt.AlignCenter
         title: "GATE3"
     }
 
     GATEBox {
-        baseChannel: pvPrefix + "GATE4_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":GATE4_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 3
         Layout.alignment: Qt.AlignCenter
         title: "GATE4"

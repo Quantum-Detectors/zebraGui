@@ -12,17 +12,22 @@ public:
     void registerTypes(const char *uri);
 };
 
+Q_IMPORT_PLUGIN(ChannelAccessPlugin)
+Q_IMPORT_PLUGIN(FilePlugin)    
+Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin)
 
 int main(int argc, char *argv[])
 {
     QApplication::setDesktopSettingsAware(false);
     Application app(argc, argv);
-    
     QtQuick2ControlsApplicationViewer viewer;
-Q_IMPORT_PLUGIN(ChannelAccessPlugin)
-Q_IMPORT_PLUGIN(FilePlugin)    
-Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin) 
-    viewer.setContextProperty("pvPrefix",  "TESTZEBRA:ZEBRATEST:");
+
+    // If we have one argument then it must be our pvPrefix
+    if (argc == 2) {    
+        viewer.setContextProperty("pvPrefix",  argv[1]);
+    } else {
+        viewer.setContextProperty("pvPrefix",  "TESTZEBRA");
+    }    
     viewer.setMainQmlFile(QStringLiteral("qml/zebraGui/main.qml"));
     viewer.show();
 

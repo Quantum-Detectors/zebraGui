@@ -7,32 +7,32 @@ GridLayout {
 
     DIVBox {
         title: "DIV1"
-        baseChannel: pvPrefix + "DIV1_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":DIV1_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 8
         Layout.alignment: Qt.AlignCenter
     }
 
     DIVBox {
         title: "DIV2"
-        baseChannel: pvPrefix + "DIV2_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":DIV2_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 9
         Layout.alignment: Qt.AlignCenter
     }
 
     DIVBox {
         title: "DIV3"
-        baseChannel: pvPrefix + "DIV3_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":DIV3_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 10
         Layout.alignment: Qt.AlignCenter
     }
 
     DIVBox {
         title: "DIV4"
-        baseChannel: pvPrefix + "DIV4_"
-        polarityChannel: pvPrefix + "POLARITY"
+        baseChannel: pvPrefix + ":DIV4_"
+        polarityChannel: pvPrefix + ":POLARITY"
         polarityIndex: 11
         Layout.alignment: Qt.AlignCenter
     }

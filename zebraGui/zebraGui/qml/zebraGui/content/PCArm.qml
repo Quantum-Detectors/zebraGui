@@ -19,12 +19,12 @@ GroupBox {
         EnumMenu {
         Layout.fillWidth: true
             id: stateSelector
-            channelID: pvPrefix + "PC_ARM_SEL"
+            channelID: pvPrefix + ":PC_ARM_SEL"
         }
 
         InputSelector {
             id: externalBox
-            channelID: pvPrefix + "PC_ARM_INP"
+            channelID: pvPrefix + ":PC_ARM_INP"
             visible: false
             indicatorVisible: false
             anchors.bottom: parent.bottom
@@ -33,7 +33,7 @@ GroupBox {
         Button {
             CANumber {
                 id: caArm
-                channelID: pvPrefix + "PC_ARM"
+                channelID: pvPrefix + ":PC_ARM"
             }
             id: armButton
             text: "Arm"
@@ -43,7 +43,7 @@ GroupBox {
         Button {
             CANumber {
                 id: caDisarm
-                channelID: pvPrefix + "PC_DISARM"
+                channelID: pvPrefix + ":PC_DISARM"
             }
             text: "Disarm"
             onClicked: caDisarm.value = 0
@@ -52,7 +52,7 @@ GroupBox {
         Indicator {
             CANumber {
                 id: caArmOut
-                channelID: pvPrefix + "PC_ARM_OUT"
+                channelID: pvPrefix + ":PC_ARM_OUT"
                 onValueChanged: if (value == 1) {
                                     parent.col = "#00FF00"
                                 } else {

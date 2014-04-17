@@ -10,7 +10,7 @@ import "content"
 ApplicationWindow {
 
     id: mainWindow
-    title: "Zebra"
+    title: "Zebra: " + pvPrefix
     minimumHeight: 650
     minimumWidth: byteInd1_1.width + byteInd2_1.width + 750 // diagram width + padding
 
@@ -45,7 +45,7 @@ ApplicationWindow {
                         labels: [' 0: DISCONNECT', ' 1: IN1_TTL', ' 2: IN1_NIM', ' 3: IN1_LVDS', ' 4: IN2_TTL', ' 5: IN2_NIM', ' 6: IN2_LVDS', ' 7: IN3_TTL', ' 8: IN3_OC', ' 9: IN3_LVDS', '10: IN4_TTL', '11: IN4_CMP', '12: IN4_PECL', '13: IN5_ENCA', '14: IN5_ENCB', '15: IN5_ENCZ']
                         indicatorSize: 14
                         fontSize: 9
-                        channelID: pvPrefix + "SYS_STAT1LO"
+                        channelID: pvPrefix + ":SYS_STAT1LO"
                     }
                     ByteIndicator {
                         id: byteInd1_2
@@ -54,7 +54,7 @@ ApplicationWindow {
                         labels: ['16: IN5_CONN', '17: IN6_ENCA', '18: IN6_ENCB', '19: IN6_ENCZ', '20: IN6_CONN', '21: IN7_ENCA', '22: IN7_ENCB', '23: IN7_ENCZ', '24: IN7_CONN', '25: IN8_ENCA', '26: IN8_ENCB', '27: IN8_ENCZ', '28: IN8_CONN', '29: PC_ARM', '30: PC_GATE', '31: PC_PULSE']
                         indicatorSize: 14
                         fontSize: 9
-                        channelID: pvPrefix + "SYS_STAT1HI"
+                        channelID: pvPrefix + ":SYS_STAT1HI"
                     }                       
                 }
                 Column {
@@ -70,7 +70,7 @@ ApplicationWindow {
                         labels: ['32: AND1', '33: AND2', '34: AND3', '35: AND4', '36: OR1', '37: OR2', '38: OR3', '39: OR4', '40: GATE1', '41: GATE2', '42: GATE3', '43: GATE4', '44: DIV1_OUTD', '45: DIV2_OUTD', '46: DIV3_OUTD', '47: DIV4_OUTD', '48: DIV1_OUTN', '49: DIV2_OUTN', '50: DIV3_OUTN', '51: DIV4_OUTN', '52: PULSE1', '53: PULSE2', '54: PULSE3', '55: PULSE4', '56: QUAD_OUTA', '57: QUAD_OUTB', '58: CLOCK_1KHZ', '59: CLOCK_1MHZ', '60: SOFT_IN1', '61: SOFT_IN2', '62: SOFT_IN3', '63: SOFT_IN4']
                         indicatorSize: 14
                         fontSize: 9
-                        channelID: pvPrefix + "SYS_STAT2LO"
+                        channelID: pvPrefix + ":SYS_STAT2LO"
                     }
                     ByteIndicator {
                         id: byteInd2_2
@@ -79,7 +79,7 @@ ApplicationWindow {
                         labels: ['32: AND1', '33: AND2', '34: AND3', '35: AND4', '36: OR1', '37: OR2', '38: OR3', '39: OR4', '40: GATE1', '41: GATE2', '42: GATE3', '43: GATE4', '44: DIV1_OUTD', '45: DIV2_OUTD', '46: DIV3_OUTD', '47: DIV4_OUTD', '48: DIV1_OUTN', '49: DIV2_OUTN', '50: DIV3_OUTN', '51: DIV4_OUTN', '52: PULSE1', '53: PULSE2', '54: PULSE3', '55: PULSE4', '56: QUAD_OUTA', '57: QUAD_OUTB', '58: CLOCK_1KHZ', '59: CLOCK_1MHZ', '60: SOFT_IN1', '61: SOFT_IN2', '62: SOFT_IN3', '63: SOFT_IN4']
                         indicatorSize: 14
                         fontSize: 9
-                        channelID: pvPrefix + "SYS_STAT2HI"
+                        channelID: pvPrefix + ":SYS_STAT2HI"
                     }
                 }
             }
@@ -95,7 +95,7 @@ ApplicationWindow {
                     labels: ['PULSE1 Trig while active', 'PULSE2 Trig while active', 'PULSE3 Trig while active', 'PULSE4 Trig while active', 'PC buff overflow', "Err5", "Err6", "Err7", "Err8"]
                     indicatorSize: 14
                     fontSize: 9
-                    channelID: pvPrefix + "SYS_STATERR"
+                    channelID: pvPrefix + ":SYS_STATERR"
                     onCol: "#FF0000"
                     offCol: "#660000"                  
                 } 
@@ -178,7 +178,7 @@ ApplicationWindow {
 
                 CALabel {
                     width: 90
-                    channelID: pvPrefix + "CONNECTED"
+                    channelID: pvPrefix + ":CONNECTED"
                 }
 
                 Rectangle { // Seperator
@@ -196,7 +196,7 @@ ApplicationWindow {
                     model: 4                    
                     CACheckBox {
                         text: "INP" +  (index + 1)
-                        channelID: pvPrefix + "SOFT_IN:B" + index
+                        channelID: pvPrefix + ":SOFT_IN:B" + index
                     }              
                 }
                 Label {
@@ -208,7 +208,7 @@ ApplicationWindow {
                     text: "Reset"
                     CANumber {
                         id: caReset
-                        channelID: pvPrefix + "SYS_RESET.PROC"
+                        channelID: pvPrefix + ":SYS_RESET.PROC"
                     }
                     id: resetButton
                     onClicked: caReset.value = 1                    

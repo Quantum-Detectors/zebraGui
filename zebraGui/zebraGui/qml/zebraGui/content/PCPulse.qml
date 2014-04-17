@@ -21,34 +21,34 @@ GroupBox {
 
             EnumMenu {
                 id: stateSelector
-                channelID: pvPrefix + "PC_PULSE_SEL"
+                channelID: pvPrefix + ":PC_PULSE_SEL"
             }
         }
 
         TextEntry {
             id: pulseStart
-            channelID: pvPrefix + "PC_PULSE_START"
+            channelID: pvPrefix + ":PC_PULSE_START"
             label: "Pulse Start"
             units: pulseBox.units
         }
 
         TextEntry {
             id: pulseWidth
-            channelID: pvPrefix + "PC_PULSE_WID"
+            channelID: pvPrefix + ":PC_PULSE_WID"
             label: "Pulse Width"
             units: pulseBox.units
         }
 
         TextEntry {
             id: pulseStep
-            channelID: pvPrefix + "PC_PULSE_STEP"
+            channelID: pvPrefix + ":PC_PULSE_STEP"
             label: "Pulse Step"
             units: pulseBox.units
         }
 
         TextEntry {
             id: captDelay
-            channelID: pvPrefix + "PC_PULSE_DLY"
+            channelID: pvPrefix + ":PC_PULSE_DLY"
             label: "Capt Delay"
             units: pulseBox.units
             visible: false
@@ -56,13 +56,13 @@ GroupBox {
 
         TextEntry {
             id: maxPulses
-            channelID: pvPrefix + "PC_PULSE_MAX"
+            channelID: pvPrefix + ":PC_PULSE_MAX"
             label: "Max Pulses"
         }
 
         InputSelector {
             id: externalBox
-            channelID: pvPrefix + "PC_PULSE_INP"
+            channelID: pvPrefix + ":PC_PULSE_INP"
             visible: false
             indicatorVisible: false
             anchors.bottom: parent.bottom
@@ -79,7 +79,7 @@ GroupBox {
             Indicator {
                 CANumber {
                     id: caPulseOut
-                    channelID: pvPrefix + "PC_PULSE_OUT"
+                    channelID: pvPrefix + ":PC_PULSE_OUT"
                     onValueChanged: if (value == 1) {
                                         parent.col = "#00FF00"
                                     } else {

@@ -9,25 +9,25 @@ GridLayout {
 
     ANDBox {
         title: "OR1"
-        baseChannel: pvPrefix + "OR1_"
+        baseChannel: pvPrefix + ":OR1_"
         Layout.alignment: Qt.AlignCenter
     }
 
     ANDBox {
         title: "OR2"
-        baseChannel: pvPrefix + "OR2_"
+        baseChannel: pvPrefix + ":OR2_"
         Layout.alignment: Qt.AlignCenter
     }
 
     ANDBox {
         title: "OR3"
-        baseChannel: pvPrefix + "OR3_"
+        baseChannel: pvPrefix + ":OR3_"
         Layout.alignment: Qt.AlignCenter
     }
 
     ANDBox {
         title: "OR4"
-        baseChannel: pvPrefix + "OR4_"
+        baseChannel: pvPrefix + ":OR4_"
         Layout.alignment: Qt.AlignCenter
     }
     
