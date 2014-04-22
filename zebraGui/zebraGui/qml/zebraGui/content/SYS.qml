@@ -21,10 +21,23 @@ RowLayout {
             ColumnLayout {
                 anchors.top: parent.top
                 Label { text: "Version" }
-                CALabel {
-                    Layout.fillWidth: true
-                    channelID: pvPrefix + ":SYS_VER"
-                }            
+                Rectangle {
+                    color: "#777777"
+                    height: sys_ver.height
+                    Layout.fillWidth: true                                    
+                    Text {
+                        id: sys_ver
+                        color: "light green"
+                        height: 20
+                        verticalAlignment: Text.AlignVCenter
+                        CANumber {
+                            channelID: pvPrefix + ":SYS_VER"
+                            onIntValueChanged: {
+                                parent.text = "0x" + intValue.toString(16)
+                            }
+                        }
+                    }   
+                }                 
                 Button {
                     text: "Open\nin a\nnew\nscreen"
                     Layout.maximumWidth: 50
