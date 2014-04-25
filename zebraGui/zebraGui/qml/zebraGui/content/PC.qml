@@ -158,9 +158,21 @@ ColumnLayout {
         
     }
 
-    Button {
-        text: "Display Captured Data..."
-        onClicked: plot.show()
-        Layout.fillWidth: true
+    RowLayout {
+        Layout.fillWidth: true    
+        Button {
+            text: "Display Captured Data..."
+            Layout.fillWidth: true 
+            onClicked: plot.show()
+        }
+        Label {
+            id: downLabel
+            text: "Data Download in Progress"
+        }
+
+        CAIndicator {
+            id: downIndicator
+            channelID: pvPrefix + ":ARRAY_ACQ"
+        }    
     }
 }

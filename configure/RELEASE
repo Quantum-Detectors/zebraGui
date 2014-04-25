@@ -1,3 +1,3 @@
-#QT = /dls_sw/work/tools/RHEL6-x86_64/qt
-QT = /dls_sw/work/tools/RHEL6-x86_64/qt_static
-#QT = /scratch/tools/qt
+TOOLS_SUPPORT=/dls_sw/prod/tools/RHEL6-x86_64
+QT_STATIC = $(TOOLS_SUPPORT)/qt_static/5-2-0
+

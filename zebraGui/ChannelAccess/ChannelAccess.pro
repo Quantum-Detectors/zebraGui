@@ -10,18 +10,18 @@ QMAKE_MOC_OPTIONS += -Muri=ChannelAccess
 TARGET = ChannelAccess
 
 unix {
-#LIBS += -L/dls_sw/epics/R3.14.12.3/base/lib/linux-x86_64 -lca
-# -Wl,-rpath /dls_sw/epics/R3.14.12.3/base/lib/linux-x86_64
+#LIBS += -L$$(EPICS_BASE)/lib/linux-x86_64 -lca
+# -Wl,-rpath $$(EPICS_BASE)/lib/linux-x86_64
 
-INCLUDEPATH += /dls_sw/epics/R3.14.12.3/base/include/ \
-/dls_sw/epics/R3.14.12.3/base/include/os/Linux/
+INCLUDEPATH += $$(EPICS_BASE)/include/ \
+$$(EPICS_BASE)/include/os/Linux/
 }
 
 win32 {
-LIBS += -L/dls_sw/epics/R3.14.12.3/base/lib/win32-x86 -lca
+LIBS += -L$$(EPICS_BASE)/lib/win32-x86 -lca
 
-INCLUDEPATH += /dls_sw/epics/R3.14.12.3/base/include/ \
-/dls_sw/epics/R3.14.12.3/base/include/os/WIN32
+INCLUDEPATH += $$(EPICS_BASE)/include/ \
+$$(EPICS_BASE)/include/os/WIN32
 }
 
 # Input

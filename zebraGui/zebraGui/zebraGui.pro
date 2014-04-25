@@ -7,8 +7,8 @@ DEPLOYMENTFOLDERS = folder_01
 LIBS += -L../../prefix/File -lFile
 LIBS += -L../../prefix/ChannelAccess -lChannelAccess
 LIBS += -l readline
-LIBS += /dls_sw/epics/R3.14.12.3/base/lib/linux-x86_64/libca.a
-LIBS += /dls_sw/epics/R3.14.12.3/base/lib/linux-x86_64/libCom.a
+LIBS += $$(EPICS_BASE)/lib/linux-x86_64/libca.a
+LIBS += $$(EPICS_BASE)/lib/linux-x86_64/libCom.a
 LIBS += -L$$[QT_INSTALL_PREFIX]/qml/QtQuick/PrivateWidgets -lwidgetsplugin
 INCLUDEPATH += ../File ../ChannelAccess
  

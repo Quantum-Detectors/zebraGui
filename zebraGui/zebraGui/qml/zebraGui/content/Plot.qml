@@ -10,6 +10,7 @@ ApplicationWindow {
     height: 480
     property string baseName
     property real lastUpdate: Date.now() - 10000
+    title: "Zebra Data: " + pvPrefix
 
     WorkerScript {
         id: worker
