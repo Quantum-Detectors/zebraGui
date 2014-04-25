@@ -4,7 +4,7 @@ void callback(struct event_handler_args args)
 {
     CAObject *caObject;
     if (args.status != ECA_NORMAL) {
-        cerr << "Bad channel access\n";
+        cerr << "caobject: Bad channel access on pv: " << ca_name(args.chid) << endl;
         return;
     }
     caObject = (CAObject*) args.usr;

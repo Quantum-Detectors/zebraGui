@@ -4,7 +4,7 @@ void optionCallback(struct event_handler_args args)
 {
     CAEnum *caEnum;
     if (args.status != ECA_NORMAL) {
-        cerr << "Bad channel access\n";
+        cerr << "caenum: Bad channel access on pv: " << ca_name(args.chid) << endl;
         return;
     }
     caEnum = (CAEnum*) args.usr;
