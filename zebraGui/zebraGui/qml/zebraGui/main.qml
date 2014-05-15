@@ -67,7 +67,7 @@ ApplicationWindow {
                         id: byteInd2_1
                         Layout.fillHeight: true
                         bits: 16
-                        labels: ['32: AND1', '33: AND2', '34: AND3', '35: AND4', '36: OR1', '37: OR2', '38: OR3', '39: OR4', '40: GATE1', '41: GATE2', '42: GATE3', '43: GATE4', '44: DIV1_OUTD', '45: DIV2_OUTD', '46: DIV3_OUTD', '47: DIV4_OUTD', '48: DIV1_OUTN', '49: DIV2_OUTN', '50: DIV3_OUTN', '51: DIV4_OUTN', '52: PULSE1', '53: PULSE2', '54: PULSE3', '55: PULSE4', '56: QUAD_OUTA', '57: QUAD_OUTB', '58: CLOCK_1KHZ', '59: CLOCK_1MHZ', '60: SOFT_IN1', '61: SOFT_IN2', '62: SOFT_IN3', '63: SOFT_IN4']
+                        labels: ['32: AND1', '33: AND2', '34: AND3', '35: AND4', '36: OR1', '37: OR2', '38: OR3', '39: OR4', '40: GATE1', '41: GATE2', '42: GATE3', '43: GATE4', '44: DIV1_OUTD', '45: DIV2_OUTD', '46: DIV3_OUTD', '47: DIV4_OUTD']
                         indicatorSize: 14
                         fontSize: 9
                         channelID: pvPrefix + ":SYS_STAT2LO"
@@ -76,7 +76,7 @@ ApplicationWindow {
                         id: byteInd2_2
                         Layout.fillHeight: true
                         bits: 16
-                        labels: ['32: AND1', '33: AND2', '34: AND3', '35: AND4', '36: OR1', '37: OR2', '38: OR3', '39: OR4', '40: GATE1', '41: GATE2', '42: GATE3', '43: GATE4', '44: DIV1_OUTD', '45: DIV2_OUTD', '46: DIV3_OUTD', '47: DIV4_OUTD', '48: DIV1_OUTN', '49: DIV2_OUTN', '50: DIV3_OUTN', '51: DIV4_OUTN', '52: PULSE1', '53: PULSE2', '54: PULSE3', '55: PULSE4', '56: QUAD_OUTA', '57: QUAD_OUTB', '58: CLOCK_1KHZ', '59: CLOCK_1MHZ', '60: SOFT_IN1', '61: SOFT_IN2', '62: SOFT_IN3', '63: SOFT_IN4']
+                        labels: ['48: DIV1_OUTN', '49: DIV2_OUTN', '50: DIV3_OUTN', '51: DIV4_OUTN', '52: PULSE1', '53: PULSE2', '54: PULSE3', '55: PULSE4', '56: QUAD_OUTA', '57: QUAD_OUTB', '58: CLOCK_1KHZ', '59: CLOCK_1MHZ', '60: SOFT_IN1', '61: SOFT_IN2', '62: SOFT_IN3', '63: SOFT_IN4']
                         indicatorSize: 14
                         fontSize: 9
                         channelID: pvPrefix + ":SYS_STAT2HI"
