@@ -45,11 +45,11 @@ GridLayout {
                 }    
                 
                 TextField {
-                    onAccepted: setMres.value = text
+                    onAccepted: setERES.value = text
                     Layout.fillWidth: true
                     CANumber {
-                        id: setMres
-                        channelID: pvPrefix + ":M" + (index+1) + ":MRES"
+                        id: setERES
+                        channelID: pvPrefix + ":M" + (index+1) + ":ERES"
                         onValueChanged: parent.text = value
                     }
                 } 
