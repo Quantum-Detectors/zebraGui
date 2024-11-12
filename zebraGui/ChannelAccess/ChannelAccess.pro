@@ -14,7 +14,8 @@ unix {
 # -Wl,-rpath $$(EPICS_BASE)/lib/linux-x86_64
 
 INCLUDEPATH += $$(EPICS_BASE)/include/ \
-$$(EPICS_BASE)/include/os/Linux/
+$$(EPICS_BASE)/include/os/Linux/ \
+$$(EPICS_BASE)/include/compiler/gcc/
 }
 
 win32 {
