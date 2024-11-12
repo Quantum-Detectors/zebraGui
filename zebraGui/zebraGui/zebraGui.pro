@@ -6,7 +6,7 @@ DEPLOYMENTFOLDERS = folder_01
 # Additional import path used to resolve QML modules in Creator's code model
 LIBS += -L../../prefix/File -lFile
 LIBS += -L../../prefix/ChannelAccess -lChannelAccess
-LIBS += -l readline
+LIBS += -lreadline
 LIBS += $$(EPICS_BASE)/lib/linux-x86_64/libca.a
 LIBS += $$(EPICS_BASE)/lib/linux-x86_64/libCom.a
 LIBS += -L$$[QT_INSTALL_PREFIX]/qml/QtQuick/PrivateWidgets -lwidgetsplugin
