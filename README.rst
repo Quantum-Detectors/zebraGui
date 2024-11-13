@@ -33,8 +33,20 @@ Assuming EPICS base is installed at /epics-base.
 
 - ln -s /usr/lib64/libreadline.so.8 /usr/lib64/libreadline.so
 - export EPICS_BASE=/epics-base
+- export TARGET_PREFIX=/zebraGui/prefix
 - mkdir prefix
 - cd prefix
-- export TARGET_PREFIX=/zebraGui/prefix
 - qmake-qt5 ../zebraGui
-- make
+- make -j 4
+- make install
+
+
+
+Using a Docker container
+------------------------
+
+Run an interactive container based on the CentOS Stream 9 image:
+
+.. code::
+
+    docker run -it --rm -v $PWD/:/zebraGui quay.io/centos/centos:stream9
