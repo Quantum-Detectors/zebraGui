@@ -34,6 +34,7 @@ Assuming EPICS base is installed at /epics-base.
 - ln -s /usr/lib64/libreadline.so.8 /usr/lib64/libreadline.so
 - export EPICS_BASE=/epics-base
 - export TARGET_PREFIX=/zebraGui/prefix
+- export QT_INSTALL_PREFIX=/usr/lib64/qt5
 - mkdir prefix
 - cd prefix
 - qmake-qt5 ../zebraGui
