@@ -76,9 +76,14 @@ echo ""
 # Packaging configuration
 #================================================
 
-package_name="zebraGUI"
-package_directory="$script_dir/../deploy"
-app_directory="$package_directory/zebraGUI"
+deploy_directory="$script_dir/../deploy"
+
+package_version=$(cat "./VERSION.txt")
+package_name="zebraGUI-$package_version"
+package_directory="$deploy_directory/$package_name"
+
+app_directory="$deploy_directory/zebraGUI"
+
 package_archive="$package_name.tar.gz"
 
 echo -e "Package name: ${CYAN}$package_name${NOCOL}\n"
@@ -92,10 +97,12 @@ build_directory="./build"
 # Create package structure
 #================================================
 
-echo -e "${CYAN} - Creating package structure${NOCOL}"
+echo -e "${CYAN} - Creating package $package_name${NOCOL}"
 
 # Directories
+rm -rf $package_directory
 mkdir -p $package_directory
+mkdir -p $app_directory
 
 # Copy pre-made files
 cp $source_deployment_directory/*.sh $package_directory
@@ -113,13 +120,31 @@ mkdir -p $build_directory
 
 # Set up paths
 export EPICS_BASE=/epics-base
+export BUILD_DIR=$build_directory
 export TARGET_PREFIX=$app_directory
 export QT_INSTALL_PREFIX=/usr/lib64/qt5
 
+echo -e "${CYAN}   - Target prefix: $TARGET_PREFIX${NOCOL}"
+
 # Build application
 cd $build_directory
-qmake-qt5 ../zebraGUI
-make -j 4
-make install
+qmake-qt5 ../zebraGUI > $REDIRECT
+make -j 4 > $REDIRECT
+make install > $REDIRECT
 
-# Copy targets
+
+#================================================
+# Create package archive
+#================================================
+
+echo -e "${CYAN} - Creating package archive $package_archive${NOCOL}"
+
+echo $deploy_directory
+echo $package_name
+
+cd $deploy_directory
+tar czf $package_archive $package_name
+# rm -rf $package_name
+cd -
+
+echo -e "${GREEN} - Package created: $package_archive${NOCOL}"
