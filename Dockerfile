@@ -1,7 +1,5 @@
 FROM quay.io/centos/centos:stream9
 
-WORKDIR /zebraGui
-
 # Update and enable additional repositories
 RUN yum -y update
 RUN yum -y install epel-release
@@ -22,3 +20,5 @@ RUN make install
 # zebraGUI dependencies
 RUN yum -y install qt5-*
 RUN yum -y install readline-devel
+
+WORKDIR /zebraGui

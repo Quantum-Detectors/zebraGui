@@ -42,12 +42,27 @@ Assuming EPICS base is installed at /epics-base.
 - make install
 
 
-
 Using a Docker container
 ------------------------
 
-Run an interactive container based on the CentOS Stream 9 image:
+You can build the image with all required dependencies:
 
 .. code::
 
-    docker run -it --rm -v $PWD/:/zebraGui quay.io/centos/centos:stream9
+    docker build -t zebragui:latest .
+
+And then run it:
+
+.. code::
+
+    docker run -it --rm -v $PWD/:/zebraGui zebragui:latest
+
+
+You can test running the application:
+
+.. code::
+
+    export LD_LIBRARY_PATH=/usr/lib64/qt5/qml/QtQuick/PrivateWidgets
+    export QT_QPA_PLATFORM=offscreen
+    export QML_IMPORT_PATH=/zebraGui/prefix:/zebraGui/prefix/File:/zebraGui/prefix/ChannelAccess
+    export QML2_IMPORT_PATH=/zebraGui/prefix:/zebraGui/prefix/File:/zebraGui/prefix/ChannelAccess
