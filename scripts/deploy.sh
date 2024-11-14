@@ -35,7 +35,7 @@ do
         h)
             echo ""
             echo -e "==========================================================="
-            echo "Motion control GUI deploy script"
+            echo "Zebra GUI deploy script"
             echo -e "==========================================================="
             echo ""
             echo "This script is used to build the deployment package."
@@ -66,6 +66,7 @@ else
 fi
 
 
+echo ""
 echo "==========================================================="
 echo "Creating Zebra GUI deployment package"
 echo "==========================================================="
@@ -138,12 +139,9 @@ make install > $REDIRECT
 
 echo -e "${CYAN} - Creating package archive $package_archive${NOCOL}"
 
-echo $deploy_directory
-echo $package_name
-
 cd $deploy_directory
 tar czf $package_archive $package_name
 # rm -rf $package_name
-cd -
+cd - > $REDIRECT
 
 echo -e "${GREEN} - Package created: $package_archive${NOCOL}"
