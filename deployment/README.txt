@@ -115,9 +115,13 @@ the application:
 
 - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/qt5/qml/QtQuick/PrivateWidgets
 
+
 Alternatively you may use the launch script which sets the path above automatically:
 
-- /opt/QD/ZebraGUI/launch.sh <PV_NAME>
+- /opt/QD/ZebraGUI/launch_zebra_gui.sh <PV_NAME>
 
 <PV_NAME> should be the PV prefix used by the Zebra IOC so the GUI connects to the
 IOC's PVs.
+
+
+These can be added to the user's PATH so they are more accessible.

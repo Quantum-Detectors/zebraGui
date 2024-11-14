@@ -15,3 +15,8 @@ Added:
 
 - Initial project from Diamond Light Source
 - Deployment scripts for CentOS Stream 9
+- Dockerfile image with dependencies included
+
+Changed:
+
+- Remove Diamond-specific build files
