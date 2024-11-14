@@ -3,6 +3,7 @@
 #include <channelaccess_plugin.h>
 #include <file_plugin.h>
 
+// TODO: check if this is required
 class QtQuick2PrivateWidgetsPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
@@ -13,8 +14,9 @@ public:
 };
 
 Q_IMPORT_PLUGIN(ChannelAccessPlugin)
-Q_IMPORT_PLUGIN(FilePlugin)    
-Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin)
+Q_IMPORT_PLUGIN(FilePlugin)
+// TODO: check if this is required
+//Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin)
 
 int main(int argc, char *argv[])
 {

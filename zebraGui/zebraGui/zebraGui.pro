@@ -4,12 +4,14 @@ folder_01.target = qml
 DEPLOYMENTFOLDERS = folder_01
 
 # Additional import path used to resolve QML modules in Creator's code model
-LIBS += -L../../prefix/File -lFile
-LIBS += -L../../prefix/ChannelAccess -lChannelAccess
-LIBS += -l readline
+LIBS += -L$$(TARGET_PREFIX)/File -lFile
+LIBS += -L$$(TARGET_PREFIX)/ChannelAccess -lChannelAccess
+LIBS += -lreadline
 LIBS += $$(EPICS_BASE)/lib/linux-x86_64/libca.a
 LIBS += $$(EPICS_BASE)/lib/linux-x86_64/libCom.a
-LIBS += -L$$[QT_INSTALL_PREFIX]/qml/QtQuick/PrivateWidgets -lwidgetsplugin
+# $$(QT_INSTALL_PREFIX) is used instead of $$[QT_INSTALL_PREFIX] as for some reason it
+# points to the wrong directory on CentOS Stream 9
+LIBS += -L$$(QT_INSTALL_PREFIX)/qml/QtQuick/PrivateWidgets -lwidgetsplugin
 INCLUDEPATH += ../File ../ChannelAccess
  
 CONFIG += static qt import_plugins 
