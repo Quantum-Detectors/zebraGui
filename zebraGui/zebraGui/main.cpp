@@ -14,7 +14,7 @@ public:
 
 Q_IMPORT_PLUGIN(ChannelAccessPlugin)
 Q_IMPORT_PLUGIN(FilePlugin)    
-Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin)
+//Q_IMPORT_PLUGIN(QtQuick2PrivateWidgetsPlugin)
 
 int main(int argc, char *argv[])
 {

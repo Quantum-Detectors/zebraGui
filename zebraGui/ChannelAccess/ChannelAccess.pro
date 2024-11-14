@@ -10,7 +10,7 @@ QMAKE_MOC_OPTIONS += -Muri=ChannelAccess
 TARGET = ChannelAccess
 
 unix {
-#LIBS += -L$$(EPICS_BASE)/lib/linux-x86_64 -lca
+LIBS += -L$$(EPICS_BASE)/lib/linux-x86_64 -lca
 # -Wl,-rpath $$(EPICS_BASE)/lib/linux-x86_64
 
 INCLUDEPATH += $$(EPICS_BASE)/include/ \

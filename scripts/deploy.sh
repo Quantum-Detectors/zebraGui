@@ -20,7 +20,7 @@ NOCOL="\033[0m"
 # Script options
 #================================================
 
-script_dir="$( cd "$( dirname "$0" )" && pwd )"
+root_dir="$(dirname "$(dirname "$(readlink -fm "$0")")")"
 
 debug_flag=0
 
@@ -76,19 +76,19 @@ echo ""
 # Packaging configuration
 #================================================
 
-deploy_directory="$script_dir/../deploy"
+deploy_directory="$root_dir/deploy"
 
 package_version=$(cat "./VERSION.txt")
 package_name="zebraGUI-$package_version"
 package_directory="$deploy_directory/$package_name"
 
-app_directory="$deploy_directory/zebraGUI"
+app_directory="$package_directory/app"
 
 package_archive="$package_name.tar.gz"
 
 echo -e "Package name: ${CYAN}$package_name${NOCOL}\n"
 
-source_deployment_directory="$script_dir/../deployment"
+source_deployment_directory="$root_dir/deployment"
 
 build_directory="./build"
 
@@ -120,7 +120,6 @@ mkdir -p $build_directory
 
 # Set up paths
 export EPICS_BASE=/epics-base
-export BUILD_DIR=$build_directory
 export TARGET_PREFIX=$app_directory
 export QT_INSTALL_PREFIX=/usr/lib64/qt5
 
@@ -129,7 +128,7 @@ echo -e "${CYAN}   - Target prefix: $TARGET_PREFIX${NOCOL}"
 # Build application
 cd $build_directory
 qmake-qt5 ../zebraGUI > $REDIRECT
-make -j 4 > $REDIRECT
+make > $REDIRECT
 make install > $REDIRECT
 
 
