@@ -107,6 +107,7 @@ mkdir -p $app_directory
 
 # Copy pre-made files
 cp $source_deployment_directory/*.sh $package_directory
+cp $source_deployment_directory/README.txt $package_directory
 
 
 #================================================
@@ -141,7 +142,7 @@ echo -e "${CYAN} - Creating package archive $package_archive${NOCOL}"
 
 cd $deploy_directory
 tar czf $package_archive $package_name
-# rm -rf $package_name
+rm -rf $package_name
 cd - > $REDIRECT
 
 echo -e "${GREEN} - Package created: $package_archive${NOCOL}"
