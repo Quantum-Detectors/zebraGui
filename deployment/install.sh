@@ -74,6 +74,7 @@ fi
 
 # Source files
 source_app_dir=$script_dir/app
+launch_gui_script=$script_dir/launch_zebra_gui.sh
 
 # Install paths
 root_install_dir=/opt/QD
@@ -128,7 +129,7 @@ mkdir -p $install_dir
 
 echo -e "${CYAN} - Copying package files${NOCOL}"
 
-cp $script_dir/launch.sh $install_dir
+cp $launch_gui_script $install_dir
 cp -r $source_app_dir $install_dir
 
 
@@ -137,6 +138,3 @@ cp -r $source_app_dir $install_dir
 #================================================
 
 echo -e "${CYAN} - Creating application shortcut${NOCOL}"
-
-# Copy launcher shortcuts
-# cp $source_shortcut_directory/* ~/.local/share/applications
